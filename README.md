@@ -119,14 +119,14 @@ a message that is sent when the trigger condition is true. By using the syntax `
 
 
 ## Installation
-``
+```
 npm i
 npm run build
-``
+```
 
 ## Dependencies
-``json
+```json
 
-``
+```
 
 

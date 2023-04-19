@@ -1,7 +1,7 @@
-\<p align="center"\>
-\<img width="128px" src="src/assets/lorian.svg" alt="Lorian logo. a handsome and helpful penguin" width=32 style="vertical-align:middle"\>
-\<h1 align="center"\>Lorian\</h1\>
-\</p\>
+<p align="center">
+<img width="128px" src="src/assets/lorian.svg" alt="Lorian logo. a handsome and helpful penguin" width=32 style="vertical-align:middle">
+<h1 align="center">Lorian\</h1>
+</p>
 
 ## Table of Contents
 - [Project description](#project-description)

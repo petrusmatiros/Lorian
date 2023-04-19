@@ -1,16 +1,31 @@
 <p align="center">
 <img width="128px" src="src/assets/lorian.svg" alt="Lorian logo. a handsome and helpful penguin" width=32 style="vertical-align:middle">
-<h1 align="center">Lorian\</h1>
+<h1 align="center">Lorian</h1>
 </p>
 
 ## Table of Contents
 - [Project description](#project-description)
 - [Commands](#commands)
-  - [All commands are author only:](#all-commands-are-author-only)
-    - [Manage Spreadsheets (max 3 spreadsheets)](#manage-spreadsheets-max-3-spreadsheets)
-    - [Manage Events (max 10 events per spreadsheet)](#manage-events-max-10-events-per-spreadsheet)
+- [Help](#help)
+- [Authors](#authors)
+  - [Example(s):](#examples)
+- [Spreadsheets](#spreadsheets)
+  - [Manage spreadsheets (max 3 spreadsheets)](#manage-spreadsheets-max-3-spreadsheets)
+    - [``<sheet id>``](#sheet-id)
+    - [``<sheet name>``](#sheet-name)
+  - [Example(s):](#examples-1)
+- [Events](#events)
+    - [``<event name>``](#event-name)
+    - [``<sheet name>``](#sheet-name-1)
+    - [``<channel>``](#channel)
+    - [``<trigger>``](#trigger)
+    - [``<message>``](#message)
+  - [Example(s):](#examples-2)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
+
+
+
 
 
 
@@ -48,9 +63,9 @@ An easy-to-use and intuitive discord bot, called Lorian. Lorian allows you to se
 ## Spreadsheets 
 ### Manage spreadsheets (max 3 spreadsheets)
 
-##### ``\<sheet id\>``
+##### ``<sheet id>``
 the  **id** in the url of the spreadsheet. For example, if the url is ``https://docs.google.com/spreadsheets/d/1X2Y3Z/edit#gid=0``, the id is ``1X2Y3Z``
-##### ``\<sheet name\>``
+##### ``<sheet name>``
 unique alias name you give to the spreadsheet
 
 ### Example(s):
@@ -74,11 +89,15 @@ unique alias name you give to the spreadsheet
 ### Manage events on a respective spreadsheet (max 10 events per spreadsheet)
 #### When modifying an event, the input arguments are optional meaning that any argument left unset, will just keep that value unchanged
 
-##### ``\<trigger\>``
-a Google Sheets Expression that you want to trigger the event. If the expression is **true**, the message will be sent, otherwise no message will be sent
-##### ``\<sheet name\>``
+##### ``<event name>``
+unique alias name you give to the event
+##### ``<sheet name>``
 unique alias name you give to the spreadsheet
-##### ``\<message\>``
+##### ``<channel>``
+the text channel where the message will be sent
+##### ``<trigger>``
+a Google Sheets Expression that you want to trigger the event. If the expression is **true**, the message will be sent, otherwise no message will be sent
+##### ``<message>``
 a message that is sent when the trigger condition is true. By using the syntax ``{A1}``, the value of A1 will be inserted into the message
 
 ### Example(s):

@@ -1,62 +1,113 @@
-<p align="center">
-<img width="128px" src="src/assets/lorian.svg" alt="Lorian logo. a handsome and helpful penguin" width=32 style="vertical-align:middle">
-<h1 align="center">Lorian</h1>
-</p>
+\<p align="center"\>
+\<img width="128px" src="src/assets/lorian.svg" alt="Lorian logo. a handsome and helpful penguin" width=32 style="vertical-align:middle"\>
+\<h1 align="center"\>Lorian\</h1\>
+\</p\>
 
 ## Table of Contents
 - [Project description](#project-description)
+- [Commands](#commands)
+  - [All commands are author only:](#all-commands-are-author-only)
+    - [Manage Spreadsheets (max 3 spreadsheets)](#manage-spreadsheets-max-3-spreadsheets)
+    - [Manage Events (max 10 events per spreadsheet)](#manage-events-max-10-events-per-spreadsheet)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
+
 
 
 ## Project description
 An easy-to-use and intuitive discord bot, called Lorian. Lorian allows you to send custom messages with specific conditions based on Google Sheets Syntax
 
 ## Commands
-### All commands are author only:
 
-- ``/help`` - lists commands
+## Help
 
-**Manage who can config the bot**
+| Command | Description |
+| --- | --- |
+| ``/help`` | lists commands | All commands are author only |
+## Authors
+### Manage who can config the bot, meaning **only authors** can use the bot
 
-- ``/author`` add ``<discord id>`` OR ``<role>``
+### Example(s):
+``/author add @user``
 
-- ``/author`` remove ``<discord id>`` OR ``<role>``
+``/author remove @user``
 
-- ``/author`` list ``<discord id>`` OR ``<role>``
+``/author add @mods``
 
-#### Manage Spreadsheets (max 3 spreadsheets)
-- ``/sheet`` add ``<sheet name>`` ``<sheet id>``
+``/author remove @mods``
 
-- ``/sheet`` modify ``<new sheet name>`` OR ``<new sheet id>``
+``/author list``
 
-- ``/sheet`` remove ``<name>`` OR ``<sheet id>``
 
-- ``/sheet`` list
+| Command | Description |
+| --- | --- |
+| ``/author add`` \<discord id\> OR \<role\> | Add author |
+| ``/author remove`` \<discord id\> OR \<role\> | Remove author |
+| ``/author list`` \<discord id\> OR \<role\> | List all authors |
 
-#### Manage Events (max 10 events per spreadsheet)
+## Spreadsheets 
+### Manage spreadsheets (max 3 spreadsheets)
 
-*Triggers use the Google Sheet Syntax*
+##### ``\<sheet id\>``
+the  **id** in the url of the spreadsheet. For example, if the url is ``https://docs.google.com/spreadsheets/d/1X2Y3Z/edit#gid=0``, the id is ``1X2Y3Z``
+##### ``\<sheet name\>``
+unique alias name you give to the spreadsheet
 
-The trigger and/or message when modifying an event, can be left undefined, which just keeps the previously set message and/or trigger.
+### Example(s):
+``/sheet add sheet1 1X2Y3Z``
 
-- ``/sheet`` ``<name>`` OR ``<sheet id>`` add event ``<event id>`` trigger:``<trigger>`` message:``<message>`` in:``<channel>``
+``/sheet modify sheet1 sheet2``
 
-- ``/sheet`` ``<name>`` OR ``<sheet id>`` modify event ``<event id>`` trigger:``<new trigger>`` message:``<new message>`` in:``<new channel>``
+``/sheet remove sheet1``
 
-- ``/sheet`` ``<name>`` OR ``<sheet id>`` remove event ``<event id>``
+``/sheet list``
 
-- ``/sheet`` ``<name>`` OR ``<sheet id>`` event list
+
+| Command | Description |
+| --- | --- |
+| ``/sheet add`` \<sheet name\> \<sheet id\> | Add a new spreadsheet |
+| ``/sheet modify`` \<new sheet name\> OR \<new sheet id\> | Modify an existing spreadsheet |
+| ``/sheet remove`` \<name\> OR \<sheet id\> | Remove an existing spreadsheet |
+| ``/sheet list`` | List all spreadsheets |
+
+## Events
+### Manage events on a respective spreadsheet (max 10 events per spreadsheet)
+#### When modifying an event, the input arguments are optional meaning that any argument left unset, will just keep that value unchanged
+
+##### ``\<trigger\>``
+a Google Sheets Expression that you want to trigger the event. If the expression is **true**, the message will be sent, otherwise no message will be sent
+##### ``\<sheet name\>``
+unique alias name you give to the spreadsheet
+##### ``\<message\>``
+a message that is sent when the trigger condition is true. By using the syntax ``{A1}``, the value of A1 will be inserted into the message
+
+### Example(s):
+``/event add event1 sheet:sheet1 in:#general trigger:=A1=1 message:{A1} is here!``
+
+``/event modify event1 sheet:sheet2 in:#notifications trigger:=A1=2 message:{A1} has joined!``
+
+``/event remove event1``
+
+``/event list sheet2``
+
+
+| Command | Description |
+| --- | --- |
+| ``/event add`` \<event name\> sheet: \<name\> OR \<sheet id\> in:\<channel\> trigger:\<trigger\> message:\<message\> | Add a new event to an existing spreadsheet |
+| ``/event modify`` \<event name\> sheet: \<new sheet id\> in:\<new channel\> trigger:\<new trigger\> message:\<new message\> | Modify an event on an existing spreadsheet |
+| ``/event remove`` \<event name\> | Remove an event from an existing spreadsheet |
+| ``/event list`` \<sheet name\> OR \<sheet id\> | List all events on an existing spreadsheet |
+
 
 ## Installation
-```
+``
 npm i
 npm run build
-```
+``
 
 ## Dependencies
-```json
+``json
 
-```
+``
 
 

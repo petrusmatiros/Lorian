@@ -12,6 +12,11 @@
 # Environment variables
 .env
 
+# Database files
+/data
+
+
+
 # Editor files
 .vscode
 .idea

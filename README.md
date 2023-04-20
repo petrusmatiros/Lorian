@@ -126,7 +126,15 @@ npm run build
 
 ## Dependencies
 ```json
-
+"axios": "^1.3.6",
+"better-sqlite3": "^8.3.0",
+"discord-interactions": "^3.3.0",
+"discord.js": "^14.9.0",
+"dotenv": "^16.0.3",
+"express": "^4.18.2",
+"express-session": "^1.17.3",
+"googleapis": "^118.0.0",
+"typescript": "^5.0.4"
 ```
 
 
